@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AGENA is an intelligent, real-time voice agent designed to securely operate your smartphone through live, conversational interaction. Join the waitlist today.">
+    <meta name="application-name" content="AGENA">
+    <meta name="keywords" content="AI Agent, Smartphone Assistant, Voice Control, Accessibility, Real-Time Voice, Collaborative AI, Mobile Automation">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agena.ai">
+    <meta property="og:title" content="AGENA - Intelligent Voice Co-Pilot for Your Smartphone">
+    <meta property="og:description" content="Operate your device securely through real-time conversational interaction. Complete tasks hands-free with complete transparency.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="AGENA - Intelligent Voice Co-Pilot for Your Smartphone">
+    <meta property="twitter:description" content="Operate your device securely through real-time conversational interaction. Complete tasks hands-free with complete transparency.">
+
+    <title>AGENA - Intelligent Voice Co-Pilot for Your Smartphone</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Canvas Background for Particle Orb -->
+    <div class="canvas-container" aria-hidden="true">
+        <canvas id="particle-canvas"></canvas>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="#" class="logo-link" id="nav-logo">
+                    <span class="logo-text">AGENA</span>
+                </a>
+            </div>
+            <nav class="nav-menu" aria-label="Main Navigation">
+                <a href="#about" class="nav-item" id="nav-link-about">Platform</a>
+                <a href="#how-it-works" class="nav-item" id="nav-link-how">How it Works</a>
+                <a href="#features" class="nav-item" id="nav-link-features">Features</a>
+                <a href="#problem-solution" class="nav-item" id="nav-link-challenges">Accessibility</a>
+            </nav>
+            <div class="header-cta">
+                <a href="#waitlist-section" class="btn btn-primary" id="header-waitlist-btn">Join Waitlist</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <small class="hero-subtitle" id="hero-small-tag">Introducing AGENA</small>
+                    <h1 class="hero-title" id="hero-main-title">Talk to your phone. It listens. It acts.</h1>
+                    <p class="hero-description" id="hero-subtext">
+                        AGENA is an intelligent, real-time voice agent designed to securely operate your smartphone through live, conversational interaction. No more clicking through menus—simply state your goal.
+                    </p>
+                    
+                    <!-- Waitlist Form inside Hero -->
+                    <div class="waitlist-form-container" id="waitlist-section">
+                        <form id="waitlist-form" class="waitlist-form" novalidate>
+                            <div class="input-wrapper">
+                                <input type="email" id="waitlist-email" placeholder="Enter your email address" aria-label="Email address for waitlist" required>
+                                <span class="error-msg" id="waitlist-error" role="alert">Please enter a valid email.</span>
+                            </div>
+                            <button type="submit" class="btn btn-accent" id="waitlist-submit-btn">
+                                <span class="btn-text">Join the Waitlist</span>
+                                <span class="btn-loader" aria-hidden="true"></span>
+                            </button>
+                        </form>
+                        <div class="waitlist-success" id="waitlist-success-msg" role="status" aria-live="polite">
+                            <svg class="success-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12.5L11 15.5L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div class="success-text-wrapper">
+                                <span class="success-headline">You're on the list!</span>
+                                <span class="success-subline">We'll notify you as soon as early access slots open up.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scroll Reveal Blur Paragraph Section -->
+        <section class="reveal-section" id="about">
+            <div class="reveal-container">
+                <p class="reveal-text" id="scroll-reveal-text">
+                    <span>Traditional virtual assistants are transactional and opaque.</span>
+                    <span>They execute simple commands but leave you in the dark.</span>
+                    <span>AGENA acts as a collaborative partner.</span>
+                    <span>It thinks out loud, discussing decisions in real-time,</span>
+                    <span>explaining how it prioritizes tasks, and pausing</span>
+                    <span>to seek confirmation before finalizing any major actions.</span>
+                    <span>This ensures complete transparency over your device,</span>
+                    <span>making hands-free control reliable and secure.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- How It Works Section (Interactive Simulator) -->
+        <section class="simulator-section" id="how-it-works">
+            <div class="simulator-container">
+                <div class="simulator-header">
+                    <small class="section-subtitle">Real-Time Interaction</small>
+                    <h2 class="section-title">See AGENA in action</h2>
+                    <p class="section-desc">Select a scenario below to watch how AGENA navigates apps, thinks out loud, and collaborates with the user in real-time.</p>
+                </div>
+
+                <div class="simulator-grid">
+                    <!-- Left Column: Scenario Control Console -->
+                    <div class="simulator-console">
+                        <div class="console-card">
+                            <h3 class="console-title">Select a Scenario</h3>
+                            <div class="scenario-buttons">
+                                <button class="scenario-btn active" id="btn-scenario-ride" data-scenario="ride">
+                                    <div class="scenario-btn-icon">🚗</div>
+                                    <div class="scenario-btn-text">
+                                        <span class="scenario-btn-title">Book a Cab to Hospital</span>
+                                        <span class="scenario-btn-desc">Coordinates travel through Uber</span>
+                                    </div>
+                                </button>
+                                <button class="scenario-btn" id="btn-scenario-coffee" data-scenario="coffee">
+                                    <div class="scenario-btn-icon">☕</div>
+                                    <div class="scenario-btn-text">
+                                        <span class="scenario-btn-title">Order Starbucks Coffee</span>
+                                        <span class="scenario-btn-desc">Finds recent order and checks cost</span>
+                                    </div>
+                                </button>
+                                <button class="scenario-btn" id="btn-scenario-email" data-scenario="email">
+                                    <div class="scenario-btn-icon">📨</div>
+                                    <div class="scenario-btn-text">
+                                        <span class="scenario-btn-title">Clean Unread Emails</span>
+                                        <span class="scenario-btn-desc">Identifies priority threads to archive</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="console-status">
+                                <span class="status-indicator active" id="simulator-status-indicator"></span>
+                                <span class="status-text" id="simulator-status-text">Simulating Ride Booking Scenario</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Smartphone Simulator Mockup -->
+                    <div class="phone-wrapper">
+                        <div class="phone-device">
+                            <!-- Speaker & Camera notch -->
+                            <div class="phone-notch"></div>
+                            
+                            <div class="phone-screen">
+                                <!-- Phone Status Bar -->
+                                <div class="phone-status-bar">
+                                    <span class="status-time" id="phone-clock">10:42 AM</span>
+                                    <div class="status-icons">
+                                        <svg class="icon-wifi" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 21l-12-12c4.4-4.4 10.6-5.3 16-2.7l-4 4c-3.1-1.3-6.9-.7-9.4 1.8l9.4 9.4 9.4-9.4c-1.3-1.3-3-2.1-4.8-2.5l2.7-2.7c2.6 1 4.7 3 6.1 5.4l-11.4 11l-.6.6z"/></svg>
+                                        <svg class="icon-battery" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17 5H3c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm3 4h2v6h-2V9z"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Screen Content -->
+                                <div class="screen-viewport" id="screen-viewport">
+                                    <!-- App UI Container (changes per scenario) -->
+                                    <div class="app-ui-layer" id="app-ui-layer">
+                                        <!-- Default Cab Screen -->
+                                        <div class="app-screen app-uber active" id="app-screen-uber">
+                                            <div class="uber-map">
+                                                <div class="map-route"></div>
+                                                <div class="map-marker pickup"></div>
+                                                <div class="map-marker destination"></div>
+                                            </div>
+                                            <div class="uber-details">
+                                                <div class="uber-header">Uber Options</div>
+                                                <div class="uber-option selected" id="uber-option-x">
+                                                    <span class="option-name">UberX (5 min away)</span>
+                                                    <span class="option-price">$14.50</span>
+                                                </div>
+                                                <div class="uber-option" id="uber-option-premier">
+                                                    <span class="option-name">Premier (10 min away)</span>
+                                                    <span class="option-price">$28.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Conversation overlay (chat dialog bubbles) -->
+                                    <div class="dialog-layer" id="dialog-layer">
+                                        <div class="dialog-scroll" id="dialog-scroll">
+                                            <!-- Dynamic chat messages go here -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Interactive User Confirmation Box -->
+                                    <div class="action-confirmation-overlay" id="confirmation-overlay">
+                                        <div class="confirmation-box">
+                                            <div class="confirmation-title">Awaiting Your Approval</div>
+                                            <div class="confirmation-desc" id="confirmation-desc">Should I book the UberX for $14.50?</div>
+                                            <div class="confirmation-actions">
+                                                <button class="btn-confirm decline" id="btn-decline-action">Decline</button>
+                                                <button class="btn-confirm approve" id="btn-approve-action">Approve</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone Bottom Navigation / Voice Indicator -->
+                                <div class="phone-bottom-bar">
+                                    <div class="voice-wave-container">
+                                        <div class="voice-wave-bar"></div>
+                                        <div class="voice-wave-bar"></div>
+                                        <div class="voice-wave-bar"></div>
+                                        <div class="voice-wave-bar"></div>
+                                        <div class="voice-wave-bar"></div>
+                                    </div>
+                                    <div class="voice-agent-glow" id="voice-agent-indicator"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Border Grid Section (Profound style grid) -->
+        <section class="features-section" id="features">
+            <div class="features-container">
+                <div class="features-header">
+                    <small class="section-subtitle">Core Architecture</small>
+                    <h2 class="section-title">Built for absolute control</h2>
+                    <p class="section-desc">AGENA redefines mobile interaction by putting deep OS capabilities behind a cooperative voice interface.</p>
+                </div>
+                
+                <!-- Border Grid (1px light borders, sharp corners, responsive) -->
+                <div class="border-grid">
+                    <!-- Card 1 -->
+                    <div class="grid-card">
+                        <div class="grid-card-inner">
+                            <span class="grid-card-num">01</span>
+                            <h3 class="grid-card-title">Live Conversational Interface</h3>
+                            <p class="grid-card-text">
+                                Experience continuous, two-way audio communication. Speak naturally with AGENA without having to click icons, trigger hotwords continuously, or type commands.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="grid-card">
+                        <div class="grid-card-inner">
+                            <span class="grid-card-num">02</span>
+                            <h3 class="grid-card-title">Proactive Decision Transparency</h3>
+                            <p class="grid-card-text">
+                                AGENA explains its reasoning as it works, letting you know which apps it is opening, describing layout options, and explaining how it prioritizes multi-step processes.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="grid-card">
+                        <div class="grid-card-inner">
+                            <span class="grid-card-num">03</span>
+                            <h3 class="grid-card-title">Deep OS & App Integration</h3>
+                            <p class="grid-card-text">
+                                The agent acts as your digital eye and finger. It views your screen, reads text elements, fills in fields, and interacts directly with settings and third-party apps.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="grid-card">
+                        <div class="grid-card-inner">
+                            <span class="grid-card-num">04</span>
+                            <h3 class="grid-card-title">User-in-the-Loop Confirmation</h3>
+                            <p class="grid-card-text">
+                                Rest easy with built-in safety boundaries. For critical operations—such as sending sensitive emails, initiating payments, or deleting files—AGENA pauses and requires your verification.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem and Solution Section -->
+        <section class="challenges-section" id="problem-solution">
+            <div class="challenges-container">
+                <!-- Section Header -->
+                <div class="challenges-header">
+                    <small class="section-subtitle">The Shift</small>
+                    <h2 class="section-title">Beyond transactional assistants</h2>
+                    <p class="section-desc">Traditional voice interfaces are siloed and command-bound. AGENA breaks the paradigm by bridging natural dialogue with real-time UI navigation.</p>
+                </div>
+
+                <!-- Problem/Solution Alternating Blocks -->
+                <div class="blocks-container">
+                    <!-- Block 1: Accessibility -->
+                    <div class="block-row">
+                        <div class="block-meta">
+                            <h3 class="block-title">The Accessibility Barrier</h3>
+                            <p class="block-text">
+                                Modern mobile OS interfaces require high visual attention and physical dexterity. For users with motor impairments or visual differences, navigating modern apps is slow and frustrating.
+                            </p>
+                        </div>
+                        <div class="block-divider" aria-hidden="true"></div>
+                        <div class="block-solution">
+                            <span class="solution-tag">AGENA Solution</span>
+                            <h4 class="solution-title">True Hands-Free Control</h4>
+                            <p class="solution-text">
+                                AGENA provides a powerful, fluid vocal layer over any application. By reading and clicking UI elements on your behalf, it offers complete smartphone control using only natural voice.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Block 2: Transactional vs Collaborative -->
+                    <div class="block-row">
+                        <div class="block-meta">
+                            <h3 class="block-title">Transactional Assistant Limits</h3>
+                            <p class="block-text">
+                                Standard phone assistants operate inside limited APIs. They can set a timer or read a text, but they cannot open a food app, locate your usual order, customize options, and checkout.
+                            </p>
+                        </div>
+                        <div class="block-divider" aria-hidden="true"></div>
+                        <div class="block-solution">
+                            <span class="solution-tag">AGENA Solution</span>
+                            <h4 class="solution-title">Collaborative Actions</h4>
+                            <p class="solution-text">
+                                By functioning as a virtual finger, AGENA drives apps natively. It navigates complex, multi-step interfaces dynamically, handling unexpected popups and screen variations seamlessly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Block 3: The Black Box -->
+                    <div class="block-row">
+                        <div class="block-meta">
+                            <h3 class="block-title">The Opaque Black Box</h3>
+                            <p class="block-text">
+                                Traditional AI actions feel alarming because the steps are invisible. If an agent performs tasks silently in the background, you lose control and trust over payments and messages.
+                            </p>
+                        </div>
+                        <div class="block-divider" aria-hidden="true"></div>
+                        <div class="block-solution">
+                            <span class="solution-tag">AGENA Solution</span>
+                            <h4 class="solution-title">Absolute Transparency</h4>
+                            <p class="solution-text">
+                                AGENA thinks out loud. By voicing its intentions, describing layout options, and requesting confirmation for important commands, it makes every device action fully traceable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">AGENA</span>
+                <p class="footer-tagline">Intelligent AI agent co-piloting your smartphone experience.</p>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <span class="footer-col-title">Platform</span>
+                    <a href="#about" class="footer-link">Core Tech</a>
+                    <a href="#how-it-works" class="footer-link">Simulator</a>
+                    <a href="#features" class="footer-link">Features</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-col-title">Legal</span>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+                <div class="footer-column">
+                    <span class="footer-col-title">Contact</span>
+                    <a href="mailto:hello@agena.ai" class="footer-link">hello@agena.ai</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright-text">&copy; 2026 AGENA AI, Inc. All rights reserved.</p>
+            <div class="badges-placeholder" aria-label="App stores coming soon">
+                <span class="badge-text">App Store Coming Soon</span>
+                <span class="badge-text">Google Play Coming Soon</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
